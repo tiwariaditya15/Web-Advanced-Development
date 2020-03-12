@@ -1,0 +1,35 @@
+<!DOCTYPEHtml>
+<html>
+		<title>Palinedrome</title>
+		<style>
+					div{
+							
+					}
+		</style>
+<body>
+		<div align = "center">
+				Enter String : <input type = "text" id = "string" placeholder = "Enter string" onkeyup = "checkPalinedrome(this.value)"/><br/><br/>
+
+				<span id = "showy"></span>
+		</div>
+
+		<script>
+
+				function checkPalinedrome(strJumble){
+						var strLower = strJumble.toLowerCase();
+						var revStr = "";
+						for(var i = strLower.length - 1;i >= 0; i--){
+							revStr += strLower[i];
+							
+						}
+
+						if(strLower == revStr){
+								document.getElementById("showy").innerHTML = strJumble + " is palinedrome."; 
+						}else{
+								document.getElementById("showy").innerHTML = strJumble + " is not palinedrome.";
+						}
+				}
+
+		</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPEHtml>
+<html>
+<body>
+		<h2> Global Variables </h2>
+		<script>
+						var globalInt = 15;
+
+						function check(){
+								document.write("<h3> Global variable inside function :- <br/> globalInt : "+ globalInt +"</h3>");
+								window.a = 10; // global variable inside function
+						}
+
+						check();
+						document.write("<h3> variable that was declared inside function accessed here outside function : " + a + "</h3>");
+
+
+		</script>
+</body>
+</html>

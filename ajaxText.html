@@ -1,0 +1,27 @@
+<!DOCTYPEHtml>
+<html>
+	<body>
+			<button type = "button" onclick = "readNow()">Click Me</button>
+
+			<div id = "showy"></div>
+
+			<script>
+
+						function readNow(){
+									console.log("Read now started.");
+									var xhttp = new XMLHttpRequest();
+									xhttp.onreadystatechange = function(){
+
+										if( this.readyState == 4 && this.status == 200){
+												document.getElementById("showy").innerHTML = this.responseText;
+										}
+
+									};
+
+									xhttp.open("GET", "resume.txt", true);
+									xhttp.send();
+
+						}
+			</script>
+	</body>
+</html>

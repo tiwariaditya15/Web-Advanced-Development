@@ -1,0 +1,49 @@
+<!DOCTYPEHtml>
+<html>
+<body>
+
+		Enter Lower limit : <input type = "text" onkeyup = "declareGlobal(this.value)"/><br/>
+		Enter Higher Limit : <input type = "text" onkeyup = "printNow(this.value)"/><br/><br/>
+		<div id = "div"></div>
+		<h4 id = "error"></h4>
+
+		<script>
+					function declareGlobal(lowerLimit){
+							window.lower = lowerLimit;
+							console.log("declareGlobal called.");
+					}
+
+					function printNow(higher){
+							console.log("Print Now called.");
+							if (window.lower > higher){
+									document.getElementById("error").innerHTML = "Lower limit has to be smaller than higher limit.";
+									document.getElementById("div").innerHTML = "";
+							}else{
+									document.getElementById("error").innerHTML = "";								
+									var str = "Prime Numbers : ";
+									for(var i = lower;i <= higher; i++){
+											console.log("Outer For.")
+											var flag = 0;
+											for(var j = 2;j <= i/2; j++){
+													console.log("Inner For.");
+													if (i == 1){
+														flag = 1;
+														break;
+													} 
+													if( i % j == 0){
+															flag = 1;
+													}
+											}
+
+											if(flag == 0){
+												str += " " + i;
+											}
+									}
+									console.log(str);
+									document.getElementById("div").innerHTML = str;
+							} 
+					}
+		</script>
+
+</body>
+</html>

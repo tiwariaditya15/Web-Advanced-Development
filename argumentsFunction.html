@@ -1,0 +1,23 @@
+<!DOCTYPEHtml>
+<html>
+<body>
+            <h3> Printing Table using arguments : </h3>
+            Enter length of table : <input type = "text" onkeyup = "declareGlobal(this.value)"/> <br/><br/>
+            Enter Number : <input type = "text" onkeyup = "printTable(this.value)" /> <br/>
+            
+            <div id = "div"></div>
+            <script>
+                    function declareGlobal(len){
+                        window.length = len;
+                    }
+                    function printTable(operand){
+                        var str = "";
+                        for ( var i = 1;i <= window.length; i++) {
+                             str += i + " * " + operand + " = " + i * operand + "<br/>";   
+                        }   
+
+                        document.getElementById("div").innerHTML = str;
+                    }
+            </script>
+</body>
+</html>

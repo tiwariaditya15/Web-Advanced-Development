@@ -1,0 +1,24 @@
+<!DOCTYPEHtml>
+<html>
+<body>
+			<h3>Usage of Local Variables</h3>
+
+		<script>
+				document.write("<h3>In javascript variables are declared with keyword var and since it is lossely typed we don't specify data typee at time of declaration.</h2>");
+
+				function first(){
+
+					var intType = 15;
+					var floatType = 20.25;
+					var stringType = "Hello World";
+				
+					document.write("<h2> variables inside function // local variable to function <br/> intType : "+ intType + " <br/> floatType : " + floatType + "<br/> stringType : " + stringType + " <br/></h2>");
+				}
+					
+				first();
+
+				// this line won't excute saying intType, floatType, stringType not defined 
+				//document.write("<h2> trying to access variables that were declared inside function // outside function <br/> intType : "+ intType + " <br/> floatType : " + floatType + "<br/> stringType : " + stringType + " <br/></h2>");
+		</script>
+</body>
+</html>

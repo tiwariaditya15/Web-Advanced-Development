@@ -1,0 +1,100 @@
+<!DOCTYPEHtml>
+<html>
+	<title>Registration Form</title>
+	<style>
+			div{
+					background-color : #7f8581;
+					margin : 3%;
+					padding : 5%;
+					border-color : black;
+					border-width : 1px;	
+			}
+
+			span{
+					font-size:20px;
+			}
+	</style>
+<body>
+		<div align = "center">
+			<h1>Registration Form</h1>
+			<form id = "form" action = "" method = "post">
+					First Name : <input type = "text" id = "fname" placeholder = "Enter first name" onkeyup = "validateFname(this.value)"/><br/><br/>
+					<span id = "err_f" style = "color:#eb2f2f;" ><b></b></span><br/><br/>
+					Last Name : <input type = "text" id = "lname" placeholder = "Enter last name" onkeyup = "validateLname(this.value)"/><br/><br/>
+					<span id = "err_l" style = "color:#eb2f2f;" ><b></b></span><br/><br/>
+					Email : <input type = "text" id = "email" placeholder = "Enter email" onkeyup = "validateEmail(this.value)"/><br/><br/>
+					<span id = "err_e" style = "color:#eb2f2f;" ><b></b></span><br/><br/>
+					Phone : <input type = "text" id = "phone" placeholder = "Enter phone number" onkeyup = "validatePhone(this.value)"><br/><br/>
+					<span id = "err_p" style = "color:#eb2f2f;" ><b></b></span><br/><br/>
+					<input type = "submit" value = "Register"/> 
+
+			</form>
+		</div>
+
+		<script>
+						var badColor = "#eb1313";
+						var goodColor = "#3a914d";
+						
+
+						function getSpan(id){
+								var error = document.getElementById(id);
+								return error;
+						}
+
+						function validateFname(name){
+								var error = getSpan("err_f");
+								if(name.length == 0){
+									document.getElementById("fname").style.backgroundColor = badColor;
+									error.innerHTML = "Name can't be empty.";
+
+								}else{
+
+									document.getElementById("fname").style.backgroundColor = goodColor;
+									error.innerHTML = "";
+								}
+									
+						}
+
+						function validateLname(name){
+								var error = getSpan("err_l");
+								if(name.length == 0){
+									document.getElementById("lname").style.backgroundColor = badColor;
+									error.innerHTML = "Last name can't be empty.";
+
+								}else{
+
+									document.getElementById("lname").style.backgroundColor = goodColor;
+									error.innerHTML = "";
+								}
+						}
+
+						function validateEmail(email){
+								var error = getSpan("err_e");
+								if(email.length == 0){
+									document.getElementById("email").style.backgroundColor = badColor;
+									error.innerHTML = "Email can't be empty.";
+
+								}else{
+
+									document.getElementById("email").style.backgroundColor = goodColor;
+									error.innerHTML = "";
+								}
+						}
+
+						function validatePhone(phone){
+								var error = getSpan("err_p");
+								if(phone.length != 10){
+									document.getElementById("phone").style.backgroundColor = badColor;
+									error.innerHTML = "Phone number has to be of length 10.";
+								}else{
+
+									document.getElementById("phone").style.backgroundColor = goodColor;
+									error.innerHTML = "";
+								}
+						}
+								
+								
+
+		</script>
+</body>
+</html>
